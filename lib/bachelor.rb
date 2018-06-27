@@ -56,18 +56,13 @@ def count_contestants_by_hometown(data, hometown)
   data.each do |seasons, arrays|
     data[seasons].each do |contestant|
       contestant.each do |k, v|
-        if k === "occupation" && v == occupation
-          obj = contestant
+        if k === "hometown" && v.split(",").first == hometown.split(",").first
+          times += 1
         end
       end
     end
   end
-  obj.each do |k, v|
-    if k == "name"
-      name = v
-    end
-  end
-  name
+  times
 end
 
 def get_occupation(data, hometown)
