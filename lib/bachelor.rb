@@ -101,5 +101,5 @@ def get_average_age_for_season(data, season)
     age += x
   end
   age /= age_array.length
-  age.to_i
+  age.
 end
