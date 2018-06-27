@@ -67,17 +67,18 @@ end
 
 def get_occupation(data, hometown)
   # code here
-  array = 0
+  array = []
+  occupation = ""
   data.each do |seasons, arrays|
     data[seasons].each do |contestant|
       contestant.each do |k, v|
         if k === "hometown" && v.split(",").first == hometown.split(",").first
-          times += 1
+          array << contestant
         end
       end
     end
   end
-  times
+  array[0].
 end
 
 def get_average_age_for_season(data, season)
