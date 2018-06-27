@@ -88,4 +88,16 @@ end
 
 def get_average_age_for_season(data, season)
   # code here
+  age = nil
+  age_array = []
+  data.each do |seasons, arrays|
+    data[seasons].each do |contestant|
+      contestant.each do |k, v|
+        if k === "hometown" && v.split(",").first == hometown.split(",").first
+          times += 1
+        end
+      end
+    end
+  end
+  times
 end
