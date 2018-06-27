@@ -1,5 +1,32 @@
-def get_first_name_of_season_winner(data, season)
+# {
+#   "season 18":[
+#       {
+#         "name":"Nikki Ferrell",
+#         "age":"26",
+#         "hometown":"Kearney, Missouri",
+#         "occupation":"Pediatric Nurse",
+#         "status":"Winner"
+#       }
+#   ]
+# }
+
+def get_first_name_of_season_winner(data, seasons)
   # code here
+  obj = ""
+  name = ""
+  data[seasons].each do |contestant|
+    contestant.each do |k, v|
+      if k == "status" && v == "Winner"
+        obj = contestant
+      end
+    end
+  end
+  obj.each do |k, v|
+    if k == "name"
+      name = v.split(" ").first
+    end
+  end
+  name
 end
 
 def get_contestant_name(data, occupation)
