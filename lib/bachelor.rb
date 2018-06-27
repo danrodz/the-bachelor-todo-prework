@@ -42,6 +42,12 @@ def get_contestant_name(data, occupation)
       end
     end
   end
+  obj.each do |k, v|
+    if k == "name"
+      name = v
+    end
+  end
+  name
 end
 
 def count_contestants_by_hometown(data, hometown)
